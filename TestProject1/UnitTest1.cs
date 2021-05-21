@@ -24,6 +24,7 @@ namespace TestProject1
     [TestClass]
     public class UnitTest1
     {
+        string dbUrl = "Server=tcp:mailsystem.database.windows.net,1433;Initial Catalog=mailSystem;Persist Security Info=False;User ID=N1kki;Password=Pass1337;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         [TestMethod]
         public void MailControllerMoq_getAllMailByUserId()
         {
@@ -92,7 +93,7 @@ namespace TestProject1
         public void MailController_getAllMailByUserId()
         {
             DbContextOptionsBuilder<ApplicationContext> options = new DbContextOptionsBuilder<ApplicationContext>();
-            options.UseSqlServer(@"Server=localhost;Database=mailSystem;Trusted_Connection=True;");
+            options.UseSqlServer(dbUrl);
             ApplicationContext context = new ApplicationContext(options.Options);
             var testMails = new MailController(new MailRepository<Mail>(context)).Get(1);
             var listMails = new MailRepository<Mail>(context).getAllMailByUserId(1);
@@ -102,7 +103,7 @@ namespace TestProject1
         public void MailController_createMailByUser()
         {
             DbContextOptionsBuilder<ApplicationContext> options = new DbContextOptionsBuilder<ApplicationContext>();
-            options.UseSqlServer(@"Server=localhost;Database=mailSystem;Trusted_Connection=True;");
+            options.UseSqlServer(dbUrl);
             ApplicationContext context = new ApplicationContext(options.Options);
             var test = new MailController(new MailRepository<Mail>(context)).Post(new Mail());
             Assert.IsNotNull(test);
@@ -111,7 +112,7 @@ namespace TestProject1
         public void MailController_deleteMailByUser()
         {
             DbContextOptionsBuilder<ApplicationContext> options = new DbContextOptionsBuilder<ApplicationContext>();
-            options.UseSqlServer(@"Server=localhost;Database=mailSystem;Trusted_Connection=True;");
+            options.UseSqlServer(dbUrl);
             ApplicationContext context = new ApplicationContext(options.Options);
             var test = new MailController(new MailRepository<Mail>(context)).Delete(21);
             Assert.IsNotNull(test);
@@ -120,7 +121,7 @@ namespace TestProject1
         public void UserController_getAllUserNames()
         {
             DbContextOptionsBuilder<ApplicationContext> options = new DbContextOptionsBuilder<ApplicationContext>();
-            options.UseSqlServer(@"Server=localhost;Database=mailSystem;Trusted_Connection=True;");
+            options.UseSqlServer(dbUrl);
             ApplicationContext context = new ApplicationContext(options.Options);
             var test = new UserController(new UserRepository<User>(context)).GetAllUserNames();
             Assert.IsNotNull(test);
@@ -129,7 +130,7 @@ namespace TestProject1
         public void UserController_getUserIdByUserName()
         {
             DbContextOptionsBuilder<ApplicationContext> options = new DbContextOptionsBuilder<ApplicationContext>();
-            options.UseSqlServer(@"Server=localhost;Database=mailSystem;Trusted_Connection=True;");
+            options.UseSqlServer(dbUrl);
             ApplicationContext context = new ApplicationContext(options.Options);
             var test = new UserController(new UserRepository<User>(context)).GetUserIdByUserName("admin");
             Assert.IsNotNull(test);
@@ -138,7 +139,7 @@ namespace TestProject1
         public void UserController_get()
         {
             DbContextOptionsBuilder<ApplicationContext> options = new DbContextOptionsBuilder<ApplicationContext>();
-            options.UseSqlServer(@"Server=localhost;Database=mailSystem;Trusted_Connection=True;");
+            options.UseSqlServer(dbUrl);
             ApplicationContext context = new ApplicationContext(options.Options);
             Assert.IsNotNull(new UserController(new UserRepository<User>(context)).Get());
         }
@@ -146,7 +147,7 @@ namespace TestProject1
         public void UserController_getUserByUserId()
         {
             DbContextOptionsBuilder<ApplicationContext> options = new DbContextOptionsBuilder<ApplicationContext>();
-            options.UseSqlServer(@"Server=localhost;Database=mailSystem;Trusted_Connection=True;");
+            options.UseSqlServer(dbUrl);
             ApplicationContext context = new ApplicationContext(options.Options);
             var test = new UserController(new UserRepository<User>(context)).GetUserByUserId(1);
             Assert.IsNotNull(test);
@@ -155,7 +156,7 @@ namespace TestProject1
         public void UserController_getUserByUserId_2()
         {
             DbContextOptionsBuilder<ApplicationContext> options = new DbContextOptionsBuilder<ApplicationContext>();
-            options.UseSqlServer(@"Server=localhost;Database=mailSystem;Trusted_Connection=True;");
+            options.UseSqlServer(dbUrl);
             ApplicationContext context = new ApplicationContext(options.Options);
             var test = new UserController(new UserRepository<User>(context)).GetUserByUserId(-1);
             Assert.IsNull(test);
@@ -164,7 +165,7 @@ namespace TestProject1
         public void MailRepository_getMailById()
         {
             DbContextOptionsBuilder<ApplicationContext> options = new DbContextOptionsBuilder<ApplicationContext>();
-            options.UseSqlServer(@"Server=localhost;Database=mailSystem;Trusted_Connection=True;");
+            options.UseSqlServer(dbUrl);
             ApplicationContext context = new ApplicationContext(options.Options);
             Assert.IsNull(new MailRepository<Mail>(context).getMailById());
         }
@@ -172,7 +173,7 @@ namespace TestProject1
         public void MailRepository_getAllMailByUserId()
         {
             DbContextOptionsBuilder<ApplicationContext> options = new DbContextOptionsBuilder<ApplicationContext>();
-            options.UseSqlServer(@"Server=localhost;Database=mailSystem;Trusted_Connection=True;");
+            options.UseSqlServer(dbUrl);
             ApplicationContext context = new ApplicationContext(options.Options);
             Assert.IsNotNull(new MailRepository<Mail>(context).getAllMailByUserId(1));
         }
@@ -180,7 +181,7 @@ namespace TestProject1
         public void MailRepository_createMailByUser()
         {
             DbContextOptionsBuilder<ApplicationContext> options = new DbContextOptionsBuilder<ApplicationContext>();
-            options.UseSqlServer(@"Server=localhost;Database=mailSystem;Trusted_Connection=True;");
+            options.UseSqlServer(dbUrl);
             ApplicationContext context = new ApplicationContext(options.Options);
             Assert.IsNotNull(new MailRepository<Mail>(context).createMailByUser(new Mail()));
         }
@@ -188,7 +189,7 @@ namespace TestProject1
         public void MailRepository_deleteMailByUser()
         {
             DbContextOptionsBuilder<ApplicationContext> options = new DbContextOptionsBuilder<ApplicationContext>();
-            options.UseSqlServer(@"Server=localhost;Database=mailSystem;Trusted_Connection=True;");
+            options.UseSqlServer(dbUrl);
             ApplicationContext context = new ApplicationContext(options.Options);
             var test = new MailRepository<Mail>(context).deleteMailByUser(context.Set<Mail>().OrderBy(Mail => Mail.MailID).Last().MailID);
             Assert.IsNotNull(test);
@@ -197,7 +198,7 @@ namespace TestProject1
         public void MailRepository_getAllMail()
         {
             DbContextOptionsBuilder<ApplicationContext> options = new DbContextOptionsBuilder<ApplicationContext>();
-            options.UseSqlServer(@"Server=localhost;Database=mailSystem;Trusted_Connection=True;");
+            options.UseSqlServer(dbUrl);
             ApplicationContext context = new ApplicationContext(options.Options);
             var listMails = new MailRepository<Mail>(context).getAllMail();
             Assert.IsNotNull(listMails);
@@ -206,7 +207,7 @@ namespace TestProject1
         public void UserRepository_getAllUserNames()
         {
             DbContextOptionsBuilder<ApplicationContext> options = new DbContextOptionsBuilder<ApplicationContext>();
-            options.UseSqlServer(@"Server=localhost;Database=mailSystem;Trusted_Connection=True;");
+            options.UseSqlServer(dbUrl);
             ApplicationContext context = new ApplicationContext(options.Options);
             var testUsers = new List<string>();
             testUsers.Add("admin");
@@ -219,7 +220,7 @@ namespace TestProject1
         public void UserController_GetUserIdByUserName()
         {
             DbContextOptionsBuilder<ApplicationContext> options = new DbContextOptionsBuilder<ApplicationContext>();
-            options.UseSqlServer(@"Server=localhost;Database=mailSystem;Trusted_Connection=True;");
+            options.UseSqlServer(dbUrl);
             ApplicationContext context = new ApplicationContext(options.Options);
             var testUsers = 1;
             var listUsers = new UserController(new UserRepository<User>(context)).GetUserIdByUserName("admin");
@@ -229,7 +230,7 @@ namespace TestProject1
         public void UserRepository_CheckLogin()
         {
             DbContextOptionsBuilder<ApplicationContext> options = new DbContextOptionsBuilder<ApplicationContext>();
-            options.UseSqlServer(@"Server=localhost;Database=mailSystem;Trusted_Connection=True;");
+            options.UseSqlServer(dbUrl);
             ApplicationContext context = new ApplicationContext(options.Options);
             User testValue = new();
             testValue.UserID = 1; testValue.UserName = "admin";
@@ -261,7 +262,7 @@ namespace TestProject1
         public void UserRepository_getUserByUserId()
         {
             DbContextOptionsBuilder<ApplicationContext> options = new DbContextOptionsBuilder<ApplicationContext>();
-            options.UseSqlServer(@"Server=localhost;Database=mailSystem;Trusted_Connection=True;");
+            options.UseSqlServer(dbUrl);
             ApplicationContext context = new ApplicationContext(options.Options);
             var testValue = new User();
             testValue.UserID = 1;
@@ -275,7 +276,7 @@ namespace TestProject1
         public void UserRepository_getUserIdByUserName()
         {
             DbContextOptionsBuilder<ApplicationContext> options = new DbContextOptionsBuilder<ApplicationContext>();
-            options.UseSqlServer(@"Server=localhost;Database=mailSystem;Trusted_Connection=True;");
+            options.UseSqlServer(dbUrl);
             ApplicationContext context = new ApplicationContext(options.Options);
             var testValue = 1;
             var actualValue = new UserRepository<User>(context).getUserIdByUserName("admin");

@@ -5,7 +5,6 @@ C:\Users\9i9i\source\repos\MailSystemDesktopApp\MailSystemDesktopApp\bin\Debug\n
 C:\Users\9i9i\source\repos\MailSystemDesktopApp\MailSystemDesktopApp\bin\Debug\net5.0-windows\MailSystemDesktopApp.dll
 C:\Users\9i9i\source\repos\MailSystemDesktopApp\MailSystemDesktopApp\bin\Debug\net5.0-windows\ref\MailSystemDesktopApp.dll
 C:\Users\9i9i\source\repos\MailSystemDesktopApp\MailSystemDesktopApp\bin\Debug\net5.0-windows\MailSystemDesktopApp.pdb
-C:\Users\9i9i\source\repos\MailSystemDesktopApp\MailSystemDesktopApp\obj\Debug\net5.0-windows\MailSystemDesktopApp.csprojAssemblyReference.cache
 C:\Users\9i9i\source\repos\MailSystemDesktopApp\MailSystemDesktopApp\obj\Debug\net5.0-windows\MainWindow.g.cs
 C:\Users\9i9i\source\repos\MailSystemDesktopApp\MailSystemDesktopApp\obj\Debug\net5.0-windows\App.g.cs
 C:\Users\9i9i\source\repos\MailSystemDesktopApp\MailSystemDesktopApp\obj\Debug\net5.0-windows\MailSystemDesktopApp_MarkupCompile.cache
@@ -66,3 +65,4 @@ C:\Users\9i9i\source\repos\MailSystemDesktopApp\MailSystemDesktopApp\obj\Debug\n
 C:\Users\9i9i\source\repos\MailSystemDesktopApp\MailSystemDesktopApp\obj\Debug\net5.0-windows\MailSystemDesktopApp.csproj.CopyComplete
 C:\Users\9i9i\source\repos\MailSystemDesktopApp\MailSystemDesktopApp\bin\Debug\net5.0-windows\Microsoft.AspNetCore.Http.Abstractions.dll
 C:\Users\9i9i\source\repos\MailSystemDesktopApp\MailSystemDesktopApp\bin\Debug\net5.0-windows\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\9i9i\source\repos\MailSystemDesktopApp\MailSystemDesktopApp\obj\Debug\net5.0-windows\MailSystemDesktopApp.csprojAssemblyReference.cache

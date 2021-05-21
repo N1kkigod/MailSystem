@@ -53,7 +53,7 @@ namespace MailSystemWebApi.Repositories
             }
             catch
             {
-                throw;
+                return null;
             }
         }
         public TDbModel deleteMailByUser(int mailID)
@@ -66,7 +66,7 @@ namespace MailSystemWebApi.Repositories
             }
             catch
             {
-                throw;
+                return null;
             }
         }
 

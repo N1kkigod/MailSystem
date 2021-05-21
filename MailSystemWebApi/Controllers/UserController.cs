@@ -29,9 +29,20 @@ namespace MailSystemWebApi.Controllers
         [HttpGet]
         public ActionResult Get()
         {
-
-            string header = Request.Headers["auth"];
-            User answer = UsersTable.checkLogin(header.Split(" ")[0], header.Split(" ")[1]);
+            string header;
+            try
+            {
+                header = Request.Headers["auth"];
+            }
+            catch
+            {
+                header = null;
+            }
+            User answer = new();
+            if (header != null)
+                answer = UsersTable.checkLogin(header.Split(" ")[0], header.Split(" ")[1]);
+            else
+                answer = null;
             if (answer == null)
             {
                 return NotFound();
@@ -55,7 +66,7 @@ namespace MailSystemWebApi.Controllers
         [HttpGet]
         public User GetUserByUserId(int userId)
         {
-            return UsersTable.getUserByUserId(userId);
+                return UsersTable.getUserByUserId(userId);
         }
     }
 }

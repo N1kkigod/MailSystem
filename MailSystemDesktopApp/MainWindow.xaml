@@ -12,9 +12,9 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Label Content="Login" HorizontalAlignment="Left" Margin="237,127,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label Content="Password&#xD;&#xA;" HorizontalAlignment="Left" Margin="237,163,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <TextBox x:Name="loginTextBox" HorizontalAlignment="Left" Margin="325,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16"/>
-        <TextBox x:Name="passwordTextBox" HorizontalAlignment="Left" Margin="325,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="237,163,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox Name="loginTextBox" HorizontalAlignment="Left" Margin="325,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" AutomationProperties.Name="loginTextBox"/>
+        <TextBox Name="passwordTextBox" HorizontalAlignment="Left" Margin="325,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" AutomationProperties.Name="passwordTextBox"/>
         <Button Content="Login" HorizontalAlignment="Center" Margin="0,216,0,0" VerticalAlignment="Top" FontSize="16" Width="98" Click="Button_Click"/>
 
     </Grid>

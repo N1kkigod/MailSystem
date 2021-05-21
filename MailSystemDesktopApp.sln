@@ -7,6 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailSystemDesktopApp", "Mai
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailSystemWebApi", "MailSystemWebApi\MailSystemWebApi.csproj", "{EC9586BA-ACAF-4EB0-BA31-388F1A40D0B0}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject1", "TestProject1\TestProject1.csproj", "{DEECD29C-02B7-4667-8359-86F0D1C7D9CC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EC9586BA-ACAF-4EB0-BA31-388F1A40D0B0} = {EC9586BA-ACAF-4EB0-BA31-388F1A40D0B0}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +26,10 @@ Global
 		{EC9586BA-ACAF-4EB0-BA31-388F1A40D0B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC9586BA-ACAF-4EB0-BA31-388F1A40D0B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC9586BA-ACAF-4EB0-BA31-388F1A40D0B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEECD29C-02B7-4667-8359-86F0D1C7D9CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEECD29C-02B7-4667-8359-86F0D1C7D9CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEECD29C-02B7-4667-8359-86F0D1C7D9CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEECD29C-02B7-4667-8359-86F0D1C7D9CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

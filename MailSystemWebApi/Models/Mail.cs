@@ -14,6 +14,13 @@ namespace MailSystemWebApi
         public DateTime Date { get; set; }
         public int AddresseeID { get; set; }
         public int AddresserID { get; set; }
-        public string MailContent { get; set; } 
+        public string MailContent { get; set; }
+        public override bool Equals(object other)
+        {
+            var toCompareWith = other as Mail;
+            if (toCompareWith == null)
+                return false;
+            return this.MailID == toCompareWith.MailID && this.MailContent == toCompareWith.MailContent && this.Date == toCompareWith.Date && this.AddresseeID == toCompareWith.AddresseeID && this.AddresserID == toCompareWith.AddresserID && this.Title == toCompareWith.Title;     
+        }
     }
 }
